@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f31b572032d6448caade2e10a15f7057" Name="Diagram1" ZoomLevel="100">
+        <EntityTypeShape EntityType="iclippoModel.iclippo_account" Width="1.5" PointX="3" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="iclippoModel.iclippo_account_address" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="iclippoModel.iclippo_account_contact" Width="1.5" PointX="5.25" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="iclippoModel.iclippo_corporate_card" Width="1.5" PointX="8.25" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="iclippoModel.iclippo_login" Width="1.5" PointX="3" PointY="22.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="iclippoModel.iclippo_other_info" Width="1.5" PointX="5.25" PointY="20.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="iclippoModel.iclippo_password_reset" Width="1.5" PointX="3" PointY="25.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="iclippoModel.iclippo_personal_card" Width="1.5" PointX="5.25" PointY="23.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="iclippoModel.iclippo_signup" Width="1.5" PointX="0.75" PointY="15" IsExpanded="true" />
+        <AssociationConnector Association="iclippoModel.FK_iclippo_account_address_iclippo_account" ManuallyRouted="false" />
+        <AssociationConnector Association="iclippoModel.FK_iclippo_account_contact_iclippo_account" ManuallyRouted="false" />
+        <AssociationConnector Association="iclippoModel.FK_iclippo_account_iclippo_signup" ManuallyRouted="false" />
+        <AssociationConnector Association="iclippoModel.FK_iclippo_corporate_card_iclippo_account" ManuallyRouted="false" />
+        <AssociationConnector Association="iclippoModel.FK_iclippo_other_info_iclippo_account" ManuallyRouted="false" />
+        <AssociationConnector Association="iclippoModel.FK_iclippo_personal_card_iclippo_account" ManuallyRouted="false" />
+        <AssociationConnector Association="iclippoModel.FK_iclippo_corporate_card_iclippo_signup" ManuallyRouted="false" />
+        <AssociationConnector Association="iclippoModel.FK_iclippo_login_iclippo_signup" ManuallyRouted="false" />
+        <AssociationConnector Association="iclippoModel.FK_iclippo_password_reset_iclippo_signup" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="iclippoModel.Application" Width="1.5" PointX="7.75" PointY="4.5" />
+        <EntityTypeShape EntityType="iclippoModel.Membership" Width="1.5" PointX="14.5" PointY="3" />
+        <EntityTypeShape EntityType="iclippoModel.Profile" Width="1.5" PointX="14.5" PointY="9.5" />
+        <EntityTypeShape EntityType="iclippoModel.Role" Width="1.5" PointX="10" PointY="4.5" />
+        <EntityTypeShape EntityType="iclippoModel.User" Width="1.5" PointX="12.25" PointY="4.125" />
+        <AssociationConnector Association="iclippoModel.MembershipApplication" />
+        <AssociationConnector Association="iclippoModel.RoleApplication" />
+        <AssociationConnector Association="iclippoModel.UserApplication" />
+        <AssociationConnector Association="iclippoModel.MembershipUser" />
+        <AssociationConnector Association="iclippoModel.UserProfile" />
+        <AssociationConnector Association="iclippoModel.UsersInRoles" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
