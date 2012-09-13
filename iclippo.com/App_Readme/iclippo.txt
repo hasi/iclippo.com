@@ -1,0 +1,50 @@
+﻿1. Get the source from https://github.com/hasi/iclippo.com.git
+
+	To get the source
+	=================
+	Install Git Source Control Provider Extension for VS2012 using VS Extension Manager.
+
+	Download following softwares from following URLs and install them.
+	http://code.google.com/p/msysgit/downloads/detail?name=Git-1.7.11-preview20120710.exe&can=2&q=
+	http://gitextensions.googlecode.com/files/GitExtensions240SetupComplete.msi
+	http://tortoisegit.googlecode.com/files/TortoiseGit-1.7.12.0-64bit.msi
+
+	Git Source Control Provide Documentation
+	http://gitscc.codeplex.com/documentation
+
+	Git Documentation
+	http://git-scm.com/doc
+
+	How to use Git as a Source Control Solution
+	http://www.netmagazine.com/tutorials/master-version-control-git
+
+	Configure remote connection to the git repository and pull the source.
+
+2. Bin folder contains the DLL for AJAX control toolkit, just add it to your toolbox and use the controls generating through it.
+
+3. Add readable and meaningful comments to your code in standard format as follows.
+		/// <summary>
+        /// get random password
+        /// </summary>
+        /// <param name="min">min value(lower value)</param>
+        /// <param name="max">max value(upper value)</param>
+        /// <returns>integer value</returns>
+        public int GetRandomNumber(int min, int max)
+        {
+            Random random = new Random();
+            return random.Next(min, max);
+        }
+
+3. User code level error handling as follows.
+		try
+        {
+            using (StreamWriter myWriter = new StreamWriter(objRequest.GetRequestStream()))
+            {
+                myWriter.Write(strPost);
+            }
+        }
+        catch (Exception e)
+        {
+            // Log the exception.
+            WingtipToys.Logic.ExceptionUtility.LogException(e, "HttpCall in PayPalFunction.cs");
+        }

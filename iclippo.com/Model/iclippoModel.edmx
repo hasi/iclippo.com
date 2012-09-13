@@ -1,0 +1,1364 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="iclippoModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="iclippoModelStoreContainer">
+          <EntitySet Name="Applications" EntityType="iclippoModel.Store.Applications" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="iclippo_account" EntityType="iclippoModel.Store.iclippo_account" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="iclippo_account_address" EntityType="iclippoModel.Store.iclippo_account_address" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="iclippo_account_contact" EntityType="iclippoModel.Store.iclippo_account_contact" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="iclippo_corporate_card" EntityType="iclippoModel.Store.iclippo_corporate_card" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="iclippo_login" EntityType="iclippoModel.Store.iclippo_login" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="iclippo_other_info" EntityType="iclippoModel.Store.iclippo_other_info" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="iclippo_password_reset" EntityType="iclippoModel.Store.iclippo_password_reset" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="iclippo_personal_card" EntityType="iclippoModel.Store.iclippo_personal_card" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="iclippo_signup" EntityType="iclippoModel.Store.iclippo_signup" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Memberships" EntityType="iclippoModel.Store.Memberships" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Profiles" EntityType="iclippoModel.Store.Profiles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Roles" EntityType="iclippoModel.Store.Roles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Users" EntityType="iclippoModel.Store.Users" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UsersInRoles" EntityType="iclippoModel.Store.UsersInRoles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UsersOpenAuthAccounts" EntityType="iclippoModel.Store.UsersOpenAuthAccounts" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UsersOpenAuthData" EntityType="iclippoModel.Store.UsersOpenAuthData" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_dbo_UsersOpenAuthAccounts_dbo_UsersOpenAuthData_ApplicationName_MembershipUserName" Association="iclippoModel.Store.FK_dbo_UsersOpenAuthAccounts_dbo_UsersOpenAuthData_ApplicationName_MembershipUserName">
+            <End Role="UsersOpenAuthData" EntitySet="UsersOpenAuthData" />
+            <End Role="UsersOpenAuthAccounts" EntitySet="UsersOpenAuthAccounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_iclippo_account_address_iclippo_account" Association="iclippoModel.Store.FK_iclippo_account_address_iclippo_account">
+            <End Role="iclippo_account" EntitySet="iclippo_account" />
+            <End Role="iclippo_account_address" EntitySet="iclippo_account_address" />
+          </AssociationSet>
+          <AssociationSet Name="FK_iclippo_account_contact_iclippo_account" Association="iclippoModel.Store.FK_iclippo_account_contact_iclippo_account">
+            <End Role="iclippo_account" EntitySet="iclippo_account" />
+            <End Role="iclippo_account_contact" EntitySet="iclippo_account_contact" />
+          </AssociationSet>
+          <AssociationSet Name="FK_iclippo_account_iclippo_signup" Association="iclippoModel.Store.FK_iclippo_account_iclippo_signup">
+            <End Role="iclippo_signup" EntitySet="iclippo_signup" />
+            <End Role="iclippo_account" EntitySet="iclippo_account" />
+          </AssociationSet>
+          <AssociationSet Name="FK_iclippo_corporate_card_iclippo_account" Association="iclippoModel.Store.FK_iclippo_corporate_card_iclippo_account">
+            <End Role="iclippo_account" EntitySet="iclippo_account" />
+            <End Role="iclippo_corporate_card" EntitySet="iclippo_corporate_card" />
+          </AssociationSet>
+          <AssociationSet Name="FK_iclippo_corporate_card_iclippo_signup" Association="iclippoModel.Store.FK_iclippo_corporate_card_iclippo_signup">
+            <End Role="iclippo_signup" EntitySet="iclippo_signup" />
+            <End Role="iclippo_corporate_card" EntitySet="iclippo_corporate_card" />
+          </AssociationSet>
+          <AssociationSet Name="FK_iclippo_login_iclippo_signup" Association="iclippoModel.Store.FK_iclippo_login_iclippo_signup">
+            <End Role="iclippo_signup" EntitySet="iclippo_signup" />
+            <End Role="iclippo_login" EntitySet="iclippo_login" />
+          </AssociationSet>
+          <AssociationSet Name="FK_iclippo_other_info_iclippo_account" Association="iclippoModel.Store.FK_iclippo_other_info_iclippo_account">
+            <End Role="iclippo_account" EntitySet="iclippo_account" />
+            <End Role="iclippo_other_info" EntitySet="iclippo_other_info" />
+          </AssociationSet>
+          <AssociationSet Name="FK_iclippo_password_reset_iclippo_signup" Association="iclippoModel.Store.FK_iclippo_password_reset_iclippo_signup">
+            <End Role="iclippo_signup" EntitySet="iclippo_signup" />
+            <End Role="iclippo_password_reset" EntitySet="iclippo_password_reset" />
+          </AssociationSet>
+          <AssociationSet Name="FK_iclippo_personal_card_iclippo_account" Association="iclippoModel.Store.FK_iclippo_personal_card_iclippo_account">
+            <End Role="iclippo_account" EntitySet="iclippo_account" />
+            <End Role="iclippo_personal_card" EntitySet="iclippo_personal_card" />
+          </AssociationSet>
+          <AssociationSet Name="MembershipApplication" Association="iclippoModel.Store.MembershipApplication">
+            <End Role="Applications" EntitySet="Applications" />
+            <End Role="Memberships" EntitySet="Memberships" />
+          </AssociationSet>
+          <AssociationSet Name="MembershipUser" Association="iclippoModel.Store.MembershipUser">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Memberships" EntitySet="Memberships" />
+          </AssociationSet>
+          <AssociationSet Name="RoleApplication" Association="iclippoModel.Store.RoleApplication">
+            <End Role="Applications" EntitySet="Applications" />
+            <End Role="Roles" EntitySet="Roles" />
+          </AssociationSet>
+          <AssociationSet Name="UserApplication" Association="iclippoModel.Store.UserApplication">
+            <End Role="Applications" EntitySet="Applications" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="UserProfile" Association="iclippoModel.Store.UserProfile">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Profiles" EntitySet="Profiles" />
+          </AssociationSet>
+          <AssociationSet Name="UsersInRoleRole" Association="iclippoModel.Store.UsersInRoleRole">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="UsersInRoles" EntitySet="UsersInRoles" />
+          </AssociationSet>
+          <AssociationSet Name="UsersInRoleUser" Association="iclippoModel.Store.UsersInRoleUser">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UsersInRoles" EntitySet="UsersInRoles" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Applications">
+          <Key>
+            <PropertyRef Name="ApplicationId" />
+          </Key>
+          <Property Name="ApplicationName" Type="nvarchar" Nullable="false" MaxLength="235" />
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="iclippo_account">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="signup_id" Type="int" Nullable="false" />
+          <Property Name="account_type" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="image_url" Type="text" Nullable="false" />
+          <Property Name="created_timestamp" Type="datetime" Nullable="false" />
+          <Property Name="modified_timestamp" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="iclippo_account_address">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="signup_id" Type="int" Nullable="false" />
+          <Property Name="account_id" Type="int" Nullable="false" />
+          <Property Name="address_name" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="house_no" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="visible_house_no" Type="int" Nullable="false" />
+          <Property Name="street" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="visible_street" Type="int" Nullable="false" />
+          <Property Name="city" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="visible_city" Type="int" Nullable="false" />
+          <Property Name="post_zip_code" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="visible_zip_code" Type="int" Nullable="false" />
+          <Property Name="state_province" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="visible_state_province" Type="int" Nullable="false" />
+          <Property Name="country" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="visible_country" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="iclippo_account_contact">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="signup_id" Type="int" Nullable="false" />
+          <Property Name="account_id" Type="int" Nullable="false" />
+          <Property Name="hotline" Type="nvarchar" MaxLength="20" />
+          <Property Name="visible_hotline" Type="int" Nullable="false" />
+          <Property Name="fixed_line" Type="nvarchar" MaxLength="20" />
+          <Property Name="visible_fixed_line" Type="int" Nullable="false" />
+          <Property Name="fax" Type="nvarchar" MaxLength="20" />
+          <Property Name="visible_fax" Type="int" Nullable="false" />
+          <Property Name="email" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="visible_email" Type="int" Nullable="false" />
+          <Property Name="web" Type="nvarchar" MaxLength="200" />
+          <Property Name="visible_web" Type="int" Nullable="false" />
+          <Property Name="messengers" Type="ntext" />
+          <Property Name="social_media" Type="ntext" />
+        </EntityType>
+        <EntityType Name="iclippo_corporate_card">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="signup_id" Type="int" Nullable="false" />
+          <Property Name="account_id" Type="int" Nullable="false" />
+          <Property Name="card_name" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="employee_name" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="mobile" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="visible_mobile" Type="int" Nullable="false" />
+          <Property Name="direct_line" Type="nvarchar" MaxLength="20" />
+          <Property Name="visible_direct_line" Type="int" Nullable="false" />
+          <Property Name="extension" Type="nvarchar" MaxLength="10" />
+          <Property Name="visible_extension" Type="int" Nullable="false" />
+          <Property Name="email" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="visible_email" Type="int" Nullable="false" />
+          <Property Name="messengers" Type="ntext" />
+          <Property Name="is_public" Type="bit" Nullable="false" />
+          <Property Name="allow_contact" Type="bit" Nullable="false" />
+          <Property Name="created_timestamp" Type="datetime" Nullable="false" />
+          <Property Name="modified_timestamp" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="iclippo_login">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="signup_id" Type="int" Nullable="false" />
+          <Property Name="ip" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="attempt" Type="int" Nullable="false" />
+          <Property Name="login_timestamp" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="iclippo_other_info">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="signup_id" Type="int" Nullable="false" />
+          <Property Name="account_id" Type="int" Nullable="false" />
+          <Property Name="industry" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="interested_in" Type="ntext" Nullable="false" />
+        </EntityType>
+        <EntityType Name="iclippo_password_reset">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="signup_id" Type="int" Nullable="false" />
+          <Property Name="old_password" Type="binary" Nullable="false" MaxLength="50" />
+          <Property Name="request_timestamp" Type="datetime" Nullable="false" />
+          <Property Name="reset_timestamp" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="iclippo_personal_card">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="signup_id" Type="int" Nullable="false" />
+          <Property Name="account_id" Type="int" Nullable="false" />
+          <Property Name="card_name" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="mobile" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="visible_mobile" Type="int" Nullable="false" />
+          <Property Name="email" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="visible_email" Type="int" Nullable="false" />
+          <Property Name="web" Type="nvarchar" MaxLength="200" />
+          <Property Name="visible_web" Type="int" Nullable="false" />
+          <Property Name="messengers" Type="ntext" />
+          <Property Name="social_media" Type="ntext" />
+          <Property Name="is_public" Type="bit" Nullable="false" />
+          <Property Name="allow_contact" Type="bit" Nullable="false" />
+          <Property Name="created_timestamp" Type="datetime" Nullable="false" />
+          <Property Name="modified_timestamp" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="iclippo_signup">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="email" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="username" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="password" Type="binary" Nullable="false" MaxLength="50" />
+          <Property Name="is_verified" Type="bit" Nullable="false" />
+          <Property Name="signup_timestamp" Type="datetime" Nullable="false" />
+          <Property Name="modified_timestamp" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Memberships">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="PasswordFormat" Type="int" Nullable="false" />
+          <Property Name="PasswordSalt" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="PasswordQuestion" Type="nvarchar" MaxLength="256" />
+          <Property Name="PasswordAnswer" Type="nvarchar" MaxLength="128" />
+          <Property Name="IsApproved" Type="bit" Nullable="false" />
+          <Property Name="IsLockedOut" Type="bit" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="LastLoginDate" Type="datetime" Nullable="false" />
+          <Property Name="LastPasswordChangedDate" Type="datetime" Nullable="false" />
+          <Property Name="LastLockoutDate" Type="datetime" Nullable="false" />
+          <Property Name="FailedPasswordAttemptCount" Type="int" Nullable="false" />
+          <Property Name="FailedPasswordAttemptWindowStart" Type="datetime" Nullable="false" />
+          <Property Name="FailedPasswordAnswerAttemptCount" Type="int" Nullable="false" />
+          <Property Name="FailedPasswordAnswerAttemptWindowsStart" Type="datetime" Nullable="false" />
+          <Property Name="Comment" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="Profiles">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PropertyNames" Type="nvarchar" Nullable="false" />
+          <Property Name="PropertyValueStrings" Type="nvarchar" Nullable="false" />
+          <Property Name="PropertyValueBinary" Type="image" Nullable="false" />
+          <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="Description" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="IsAnonymous" Type="bit" Nullable="false" />
+          <Property Name="LastActivityDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UsersInRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UsersOpenAuthAccounts">
+          <Key>
+            <PropertyRef Name="ApplicationName" />
+            <PropertyRef Name="ProviderName" />
+            <PropertyRef Name="ProviderUserId" />
+          </Key>
+          <Property Name="ApplicationName" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="ProviderName" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="ProviderUserId" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="ProviderUserName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="MembershipUserName" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="LastUsedUtc" Type="datetime" />
+        </EntityType>
+        <EntityType Name="UsersOpenAuthData">
+          <Key>
+            <PropertyRef Name="ApplicationName" />
+            <PropertyRef Name="MembershipUserName" />
+          </Key>
+          <Property Name="ApplicationName" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="MembershipUserName" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="HasLocalPassword" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_dbo_UsersOpenAuthAccounts_dbo_UsersOpenAuthData_ApplicationName_MembershipUserName">
+          <End Role="UsersOpenAuthData" Type="iclippoModel.Store.UsersOpenAuthData" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UsersOpenAuthAccounts" Type="iclippoModel.Store.UsersOpenAuthAccounts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UsersOpenAuthData">
+              <PropertyRef Name="ApplicationName" />
+              <PropertyRef Name="MembershipUserName" />
+            </Principal>
+            <Dependent Role="UsersOpenAuthAccounts">
+              <PropertyRef Name="ApplicationName" />
+              <PropertyRef Name="MembershipUserName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_iclippo_account_address_iclippo_account">
+          <End Role="iclippo_account" Type="iclippoModel.Store.iclippo_account" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="iclippo_account_address" Type="iclippoModel.Store.iclippo_account_address" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="iclippo_account">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="iclippo_account_address">
+              <PropertyRef Name="account_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_iclippo_account_contact_iclippo_account">
+          <End Role="iclippo_account" Type="iclippoModel.Store.iclippo_account" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="iclippo_account_contact" Type="iclippoModel.Store.iclippo_account_contact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="iclippo_account">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="iclippo_account_contact">
+              <PropertyRef Name="account_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_iclippo_account_iclippo_signup">
+          <End Role="iclippo_signup" Type="iclippoModel.Store.iclippo_signup" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="iclippo_account" Type="iclippoModel.Store.iclippo_account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="iclippo_signup">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="iclippo_account">
+              <PropertyRef Name="signup_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_iclippo_corporate_card_iclippo_account">
+          <End Role="iclippo_account" Type="iclippoModel.Store.iclippo_account" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="iclippo_corporate_card" Type="iclippoModel.Store.iclippo_corporate_card" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="iclippo_account">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="iclippo_corporate_card">
+              <PropertyRef Name="account_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_iclippo_corporate_card_iclippo_signup">
+          <End Role="iclippo_signup" Type="iclippoModel.Store.iclippo_signup" Multiplicity="1" />
+          <End Role="iclippo_corporate_card" Type="iclippoModel.Store.iclippo_corporate_card" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="iclippo_signup">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="iclippo_corporate_card">
+              <PropertyRef Name="signup_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_iclippo_login_iclippo_signup">
+          <End Role="iclippo_signup" Type="iclippoModel.Store.iclippo_signup" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="iclippo_login" Type="iclippoModel.Store.iclippo_login" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="iclippo_signup">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="iclippo_login">
+              <PropertyRef Name="signup_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_iclippo_other_info_iclippo_account">
+          <End Role="iclippo_account" Type="iclippoModel.Store.iclippo_account" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="iclippo_other_info" Type="iclippoModel.Store.iclippo_other_info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="iclippo_account">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="iclippo_other_info">
+              <PropertyRef Name="account_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_iclippo_password_reset_iclippo_signup">
+          <End Role="iclippo_signup" Type="iclippoModel.Store.iclippo_signup" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="iclippo_password_reset" Type="iclippoModel.Store.iclippo_password_reset" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="iclippo_signup">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="iclippo_password_reset">
+              <PropertyRef Name="signup_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_iclippo_personal_card_iclippo_account">
+          <End Role="iclippo_account" Type="iclippoModel.Store.iclippo_account" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="iclippo_personal_card" Type="iclippoModel.Store.iclippo_personal_card" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="iclippo_account">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="iclippo_personal_card">
+              <PropertyRef Name="account_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MembershipApplication">
+          <End Role="Applications" Type="iclippoModel.Store.Applications" Multiplicity="1" />
+          <End Role="Memberships" Type="iclippoModel.Store.Memberships" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Applications">
+              <PropertyRef Name="ApplicationId" />
+            </Principal>
+            <Dependent Role="Memberships">
+              <PropertyRef Name="ApplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MembershipUser">
+          <End Role="Users" Type="iclippoModel.Store.Users" Multiplicity="1" />
+          <End Role="Memberships" Type="iclippoModel.Store.Memberships" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Memberships">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RoleApplication">
+          <End Role="Applications" Type="iclippoModel.Store.Applications" Multiplicity="1" />
+          <End Role="Roles" Type="iclippoModel.Store.Roles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Applications">
+              <PropertyRef Name="ApplicationId" />
+            </Principal>
+            <Dependent Role="Roles">
+              <PropertyRef Name="ApplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserApplication">
+          <End Role="Applications" Type="iclippoModel.Store.Applications" Multiplicity="1" />
+          <End Role="Users" Type="iclippoModel.Store.Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Applications">
+              <PropertyRef Name="ApplicationId" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="ApplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserProfile">
+          <End Role="Users" Type="iclippoModel.Store.Users" Multiplicity="1" />
+          <End Role="Profiles" Type="iclippoModel.Store.Profiles" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Profiles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UsersInRoleRole">
+          <End Role="Roles" Type="iclippoModel.Store.Roles" Multiplicity="1" />
+          <End Role="UsersInRoles" Type="iclippoModel.Store.UsersInRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="UsersInRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UsersInRoleUser">
+          <End Role="Users" Type="iclippoModel.Store.Users" Multiplicity="1" />
+          <End Role="UsersInRoles" Type="iclippoModel.Store.UsersInRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="UsersInRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="iclippoModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="iclippoEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Applications" EntityType="iclippoModel.Application" />
+          <EntitySet Name="iclippo_account" EntityType="iclippoModel.iclippo_account" />
+          <EntitySet Name="iclippo_account_address" EntityType="iclippoModel.iclippo_account_address" />
+          <EntitySet Name="iclippo_account_contact" EntityType="iclippoModel.iclippo_account_contact" />
+          <EntitySet Name="iclippo_corporate_card" EntityType="iclippoModel.iclippo_corporate_card" />
+          <EntitySet Name="iclippo_login" EntityType="iclippoModel.iclippo_login" />
+          <EntitySet Name="iclippo_other_info" EntityType="iclippoModel.iclippo_other_info" />
+          <EntitySet Name="iclippo_password_reset" EntityType="iclippoModel.iclippo_password_reset" />
+          <EntitySet Name="iclippo_personal_card" EntityType="iclippoModel.iclippo_personal_card" />
+          <EntitySet Name="iclippo_signup" EntityType="iclippoModel.iclippo_signup" />
+          <EntitySet Name="Memberships" EntityType="iclippoModel.Membership" />
+          <EntitySet Name="Profiles" EntityType="iclippoModel.Profile" />
+          <EntitySet Name="Roles" EntityType="iclippoModel.Role" />
+          <EntitySet Name="Users" EntityType="iclippoModel.User" />
+          <EntitySet Name="UsersOpenAuthAccounts" EntityType="iclippoModel.UsersOpenAuthAccount" />
+          <EntitySet Name="UsersOpenAuthDatas" EntityType="iclippoModel.UsersOpenAuthData" />
+          <AssociationSet Name="MembershipApplication" Association="iclippoModel.MembershipApplication">
+            <End Role="Applications" EntitySet="Applications" />
+            <End Role="Memberships" EntitySet="Memberships" />
+          </AssociationSet>
+          <AssociationSet Name="RoleApplication" Association="iclippoModel.RoleApplication">
+            <End Role="Applications" EntitySet="Applications" />
+            <End Role="Roles" EntitySet="Roles" />
+          </AssociationSet>
+          <AssociationSet Name="UserApplication" Association="iclippoModel.UserApplication">
+            <End Role="Applications" EntitySet="Applications" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_iclippo_account_address_iclippo_account" Association="iclippoModel.FK_iclippo_account_address_iclippo_account">
+            <End Role="iclippo_account" EntitySet="iclippo_account" />
+            <End Role="iclippo_account_address" EntitySet="iclippo_account_address" />
+          </AssociationSet>
+          <AssociationSet Name="FK_iclippo_account_contact_iclippo_account" Association="iclippoModel.FK_iclippo_account_contact_iclippo_account">
+            <End Role="iclippo_account" EntitySet="iclippo_account" />
+            <End Role="iclippo_account_contact" EntitySet="iclippo_account_contact" />
+          </AssociationSet>
+          <AssociationSet Name="FK_iclippo_account_iclippo_signup" Association="iclippoModel.FK_iclippo_account_iclippo_signup">
+            <End Role="iclippo_signup" EntitySet="iclippo_signup" />
+            <End Role="iclippo_account" EntitySet="iclippo_account" />
+          </AssociationSet>
+          <AssociationSet Name="FK_iclippo_corporate_card_iclippo_account" Association="iclippoModel.FK_iclippo_corporate_card_iclippo_account">
+            <End Role="iclippo_account" EntitySet="iclippo_account" />
+            <End Role="iclippo_corporate_card" EntitySet="iclippo_corporate_card" />
+          </AssociationSet>
+          <AssociationSet Name="FK_iclippo_other_info_iclippo_account" Association="iclippoModel.FK_iclippo_other_info_iclippo_account">
+            <End Role="iclippo_account" EntitySet="iclippo_account" />
+            <End Role="iclippo_other_info" EntitySet="iclippo_other_info" />
+          </AssociationSet>
+          <AssociationSet Name="FK_iclippo_personal_card_iclippo_account" Association="iclippoModel.FK_iclippo_personal_card_iclippo_account">
+            <End Role="iclippo_account" EntitySet="iclippo_account" />
+            <End Role="iclippo_personal_card" EntitySet="iclippo_personal_card" />
+          </AssociationSet>
+          <AssociationSet Name="FK_iclippo_corporate_card_iclippo_signup" Association="iclippoModel.FK_iclippo_corporate_card_iclippo_signup">
+            <End Role="iclippo_signup" EntitySet="iclippo_signup" />
+            <End Role="iclippo_corporate_card" EntitySet="iclippo_corporate_card" />
+          </AssociationSet>
+          <AssociationSet Name="FK_iclippo_login_iclippo_signup" Association="iclippoModel.FK_iclippo_login_iclippo_signup">
+            <End Role="iclippo_signup" EntitySet="iclippo_signup" />
+            <End Role="iclippo_login" EntitySet="iclippo_login" />
+          </AssociationSet>
+          <AssociationSet Name="FK_iclippo_password_reset_iclippo_signup" Association="iclippoModel.FK_iclippo_password_reset_iclippo_signup">
+            <End Role="iclippo_signup" EntitySet="iclippo_signup" />
+            <End Role="iclippo_password_reset" EntitySet="iclippo_password_reset" />
+          </AssociationSet>
+          <AssociationSet Name="MembershipUser" Association="iclippoModel.MembershipUser">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Memberships" EntitySet="Memberships" />
+          </AssociationSet>
+          <AssociationSet Name="UserProfile" Association="iclippoModel.UserProfile">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Profiles" EntitySet="Profiles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_UsersOpenAuthAccounts_dbo_UsersOpenAuthData_ApplicationName_MembershipUserName" Association="iclippoModel.FK_dbo_UsersOpenAuthAccounts_dbo_UsersOpenAuthData_ApplicationName_MembershipUserName">
+            <End Role="UsersOpenAuthData" EntitySet="UsersOpenAuthDatas" />
+            <End Role="UsersOpenAuthAccounts" EntitySet="UsersOpenAuthAccounts" />
+          </AssociationSet>
+          <AssociationSet Name="UsersInRoles" Association="iclippoModel.UsersInRoles">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Application">
+          <Key>
+            <PropertyRef Name="ApplicationId" />
+          </Key>
+          <Property Name="ApplicationName" Type="String" Nullable="false" MaxLength="235" Unicode="true" FixedLength="false" />
+          <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Memberships" Relationship="iclippoModel.MembershipApplication" FromRole="Applications" ToRole="Memberships" />
+          <NavigationProperty Name="Roles" Relationship="iclippoModel.RoleApplication" FromRole="Applications" ToRole="Roles" />
+          <NavigationProperty Name="Users" Relationship="iclippoModel.UserApplication" FromRole="Applications" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="iclippo_account">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="signup_id" Type="Int32" Nullable="false" />
+          <Property Name="account_type" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="image_url" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="created_timestamp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modified_timestamp" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="iclippo_account_address" Relationship="iclippoModel.FK_iclippo_account_address_iclippo_account" FromRole="iclippo_account" ToRole="iclippo_account_address" />
+          <NavigationProperty Name="iclippo_account_contact" Relationship="iclippoModel.FK_iclippo_account_contact_iclippo_account" FromRole="iclippo_account" ToRole="iclippo_account_contact" />
+          <NavigationProperty Name="iclippo_signup" Relationship="iclippoModel.FK_iclippo_account_iclippo_signup" FromRole="iclippo_account" ToRole="iclippo_signup" />
+          <NavigationProperty Name="iclippo_corporate_card" Relationship="iclippoModel.FK_iclippo_corporate_card_iclippo_account" FromRole="iclippo_account" ToRole="iclippo_corporate_card" />
+          <NavigationProperty Name="iclippo_other_info" Relationship="iclippoModel.FK_iclippo_other_info_iclippo_account" FromRole="iclippo_account" ToRole="iclippo_other_info" />
+          <NavigationProperty Name="iclippo_personal_card" Relationship="iclippoModel.FK_iclippo_personal_card_iclippo_account" FromRole="iclippo_account" ToRole="iclippo_personal_card" />
+        </EntityType>
+        <EntityType Name="iclippo_account_address">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="signup_id" Type="Int32" Nullable="false" />
+          <Property Name="account_id" Type="Int32" Nullable="false" />
+          <Property Name="address_name" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="house_no" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="visible_house_no" Type="Int32" Nullable="false" />
+          <Property Name="street" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="visible_street" Type="Int32" Nullable="false" />
+          <Property Name="city" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="visible_city" Type="Int32" Nullable="false" />
+          <Property Name="post_zip_code" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="visible_zip_code" Type="Int32" Nullable="false" />
+          <Property Name="state_province" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="visible_state_province" Type="Int32" Nullable="false" />
+          <Property Name="country" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="visible_country" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="iclippo_account" Relationship="iclippoModel.FK_iclippo_account_address_iclippo_account" FromRole="iclippo_account_address" ToRole="iclippo_account" />
+        </EntityType>
+        <EntityType Name="iclippo_account_contact">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="signup_id" Type="Int32" Nullable="false" />
+          <Property Name="account_id" Type="Int32" Nullable="false" />
+          <Property Name="hotline" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="visible_hotline" Type="Int32" Nullable="false" />
+          <Property Name="fixed_line" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="visible_fixed_line" Type="Int32" Nullable="false" />
+          <Property Name="fax" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="visible_fax" Type="Int32" Nullable="false" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="visible_email" Type="Int32" Nullable="false" />
+          <Property Name="web" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="visible_web" Type="Int32" Nullable="false" />
+          <Property Name="messengers" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="social_media" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="iclippo_account" Relationship="iclippoModel.FK_iclippo_account_contact_iclippo_account" FromRole="iclippo_account_contact" ToRole="iclippo_account" />
+        </EntityType>
+        <EntityType Name="iclippo_corporate_card">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="signup_id" Type="Int32" Nullable="false" />
+          <Property Name="account_id" Type="Int32" Nullable="false" />
+          <Property Name="card_name" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="employee_name" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="mobile" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="visible_mobile" Type="Int32" Nullable="false" />
+          <Property Name="direct_line" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="visible_direct_line" Type="Int32" Nullable="false" />
+          <Property Name="extension" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="visible_extension" Type="Int32" Nullable="false" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="visible_email" Type="Int32" Nullable="false" />
+          <Property Name="messengers" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="is_public" Type="Boolean" Nullable="false" />
+          <Property Name="allow_contact" Type="Boolean" Nullable="false" />
+          <Property Name="created_timestamp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modified_timestamp" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="iclippo_account" Relationship="iclippoModel.FK_iclippo_corporate_card_iclippo_account" FromRole="iclippo_corporate_card" ToRole="iclippo_account" />
+          <NavigationProperty Name="iclippo_signup" Relationship="iclippoModel.FK_iclippo_corporate_card_iclippo_signup" FromRole="iclippo_corporate_card" ToRole="iclippo_signup" />
+        </EntityType>
+        <EntityType Name="iclippo_login">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="signup_id" Type="Int32" Nullable="false" />
+          <Property Name="ip" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="attempt" Type="Int32" Nullable="false" />
+          <Property Name="login_timestamp" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="iclippo_signup" Relationship="iclippoModel.FK_iclippo_login_iclippo_signup" FromRole="iclippo_login" ToRole="iclippo_signup" />
+        </EntityType>
+        <EntityType Name="iclippo_other_info">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="signup_id" Type="Int32" Nullable="false" />
+          <Property Name="account_id" Type="Int32" Nullable="false" />
+          <Property Name="industry" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="interested_in" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="iclippo_account" Relationship="iclippoModel.FK_iclippo_other_info_iclippo_account" FromRole="iclippo_other_info" ToRole="iclippo_account" />
+        </EntityType>
+        <EntityType Name="iclippo_password_reset">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="signup_id" Type="Int32" Nullable="false" />
+          <Property Name="old_password" Type="Binary" Nullable="false" MaxLength="50" FixedLength="true" />
+          <Property Name="request_timestamp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="reset_timestamp" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="iclippo_signup" Relationship="iclippoModel.FK_iclippo_password_reset_iclippo_signup" FromRole="iclippo_password_reset" ToRole="iclippo_signup" />
+        </EntityType>
+        <EntityType Name="iclippo_personal_card">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="signup_id" Type="Int32" Nullable="false" />
+          <Property Name="account_id" Type="Int32" Nullable="false" />
+          <Property Name="card_name" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="mobile" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="visible_mobile" Type="Int32" Nullable="false" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="visible_email" Type="Int32" Nullable="false" />
+          <Property Name="web" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="visible_web" Type="Int32" Nullable="false" />
+          <Property Name="messengers" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="social_media" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="is_public" Type="Boolean" Nullable="false" />
+          <Property Name="allow_contact" Type="Boolean" Nullable="false" />
+          <Property Name="created_timestamp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modified_timestamp" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="iclippo_account" Relationship="iclippoModel.FK_iclippo_personal_card_iclippo_account" FromRole="iclippo_personal_card" ToRole="iclippo_account" />
+        </EntityType>
+        <EntityType Name="iclippo_signup">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="username" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="password" Type="Binary" Nullable="false" MaxLength="50" FixedLength="true" />
+          <Property Name="is_verified" Type="Boolean" Nullable="false" />
+          <Property Name="signup_timestamp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modified_timestamp" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="iclippo_account" Relationship="iclippoModel.FK_iclippo_account_iclippo_signup" FromRole="iclippo_signup" ToRole="iclippo_account" />
+          <NavigationProperty Name="iclippo_corporate_card" Relationship="iclippoModel.FK_iclippo_corporate_card_iclippo_signup" FromRole="iclippo_signup" ToRole="iclippo_corporate_card" />
+          <NavigationProperty Name="iclippo_login" Relationship="iclippoModel.FK_iclippo_login_iclippo_signup" FromRole="iclippo_signup" ToRole="iclippo_login" />
+          <NavigationProperty Name="iclippo_password_reset" Relationship="iclippoModel.FK_iclippo_password_reset_iclippo_signup" FromRole="iclippo_signup" ToRole="iclippo_password_reset" />
+        </EntityType>
+        <EntityType Name="Membership">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="PasswordFormat" Type="Int32" Nullable="false" />
+          <Property Name="PasswordSalt" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="PasswordQuestion" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="PasswordAnswer" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="IsApproved" Type="Boolean" Nullable="false" />
+          <Property Name="IsLockedOut" Type="Boolean" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastLoginDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastPasswordChangedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastLockoutDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FailedPasswordAttemptCount" Type="Int32" Nullable="false" />
+          <Property Name="FailedPasswordAttemptWindowStart" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FailedPasswordAnswerAttemptCount" Type="Int32" Nullable="false" />
+          <Property Name="FailedPasswordAnswerAttemptWindowsStart" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Comment" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Application" Relationship="iclippoModel.MembershipApplication" FromRole="Memberships" ToRole="Applications" />
+          <NavigationProperty Name="User" Relationship="iclippoModel.MembershipUser" FromRole="Memberships" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Profile">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="PropertyNames" Type="String" Nullable="false" MaxLength="4000" Unicode="true" FixedLength="false" />
+          <Property Name="PropertyValueStrings" Type="String" Nullable="false" MaxLength="4000" Unicode="true" FixedLength="false" />
+          <Property Name="PropertyValueBinary" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="LastUpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="User" Relationship="iclippoModel.UserProfile" FromRole="Profiles" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+          <Property Name="RoleId" Type="Guid" Nullable="false" />
+          <Property Name="RoleName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Application" Relationship="iclippoModel.RoleApplication" FromRole="Roles" ToRole="Applications" />
+          <NavigationProperty Name="Users" Relationship="iclippoModel.UsersInRoles" FromRole="Roles" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IsAnonymous" Type="Boolean" Nullable="false" />
+          <Property Name="LastActivityDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Application" Relationship="iclippoModel.UserApplication" FromRole="Users" ToRole="Applications" />
+          <NavigationProperty Name="Membership" Relationship="iclippoModel.MembershipUser" FromRole="Users" ToRole="Memberships" />
+          <NavigationProperty Name="Profile" Relationship="iclippoModel.UserProfile" FromRole="Users" ToRole="Profiles" />
+          <NavigationProperty Name="Roles" Relationship="iclippoModel.UsersInRoles" FromRole="Users" ToRole="Roles" />
+        </EntityType>
+        <EntityType Name="UsersOpenAuthAccount">
+          <Key>
+            <PropertyRef Name="ApplicationName" />
+            <PropertyRef Name="ProviderName" />
+            <PropertyRef Name="ProviderUserId" />
+          </Key>
+          <Property Name="ApplicationName" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="ProviderName" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="ProviderUserId" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="ProviderUserName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="MembershipUserName" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="LastUsedUtc" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="UsersOpenAuthData" Relationship="iclippoModel.FK_dbo_UsersOpenAuthAccounts_dbo_UsersOpenAuthData_ApplicationName_MembershipUserName" FromRole="UsersOpenAuthAccounts" ToRole="UsersOpenAuthData" />
+        </EntityType>
+        <EntityType Name="UsersOpenAuthData">
+          <Key>
+            <PropertyRef Name="ApplicationName" />
+            <PropertyRef Name="MembershipUserName" />
+          </Key>
+          <Property Name="ApplicationName" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="MembershipUserName" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="HasLocalPassword" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="UsersOpenAuthAccounts" Relationship="iclippoModel.FK_dbo_UsersOpenAuthAccounts_dbo_UsersOpenAuthData_ApplicationName_MembershipUserName" FromRole="UsersOpenAuthData" ToRole="UsersOpenAuthAccounts" />
+        </EntityType>
+        <Association Name="MembershipApplication">
+          <End Role="Applications" Type="iclippoModel.Application" Multiplicity="1" />
+          <End Role="Memberships" Type="iclippoModel.Membership" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Applications">
+              <PropertyRef Name="ApplicationId" />
+            </Principal>
+            <Dependent Role="Memberships">
+              <PropertyRef Name="ApplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RoleApplication">
+          <End Role="Applications" Type="iclippoModel.Application" Multiplicity="1" />
+          <End Role="Roles" Type="iclippoModel.Role" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Applications">
+              <PropertyRef Name="ApplicationId" />
+            </Principal>
+            <Dependent Role="Roles">
+              <PropertyRef Name="ApplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserApplication">
+          <End Role="Applications" Type="iclippoModel.Application" Multiplicity="1" />
+          <End Role="Users" Type="iclippoModel.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Applications">
+              <PropertyRef Name="ApplicationId" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="ApplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_iclippo_account_address_iclippo_account">
+          <End Role="iclippo_account" Type="iclippoModel.iclippo_account" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="iclippo_account_address" Type="iclippoModel.iclippo_account_address" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="iclippo_account">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="iclippo_account_address">
+              <PropertyRef Name="account_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_iclippo_account_contact_iclippo_account">
+          <End Role="iclippo_account" Type="iclippoModel.iclippo_account" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="iclippo_account_contact" Type="iclippoModel.iclippo_account_contact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="iclippo_account">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="iclippo_account_contact">
+              <PropertyRef Name="account_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_iclippo_account_iclippo_signup">
+          <End Role="iclippo_signup" Type="iclippoModel.iclippo_signup" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="iclippo_account" Type="iclippoModel.iclippo_account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="iclippo_signup">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="iclippo_account">
+              <PropertyRef Name="signup_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_iclippo_corporate_card_iclippo_account">
+          <End Role="iclippo_account" Type="iclippoModel.iclippo_account" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="iclippo_corporate_card" Type="iclippoModel.iclippo_corporate_card" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="iclippo_account">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="iclippo_corporate_card">
+              <PropertyRef Name="account_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_iclippo_other_info_iclippo_account">
+          <End Role="iclippo_account" Type="iclippoModel.iclippo_account" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="iclippo_other_info" Type="iclippoModel.iclippo_other_info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="iclippo_account">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="iclippo_other_info">
+              <PropertyRef Name="account_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_iclippo_personal_card_iclippo_account">
+          <End Role="iclippo_account" Type="iclippoModel.iclippo_account" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="iclippo_personal_card" Type="iclippoModel.iclippo_personal_card" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="iclippo_account">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="iclippo_personal_card">
+              <PropertyRef Name="account_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_iclippo_corporate_card_iclippo_signup">
+          <End Role="iclippo_signup" Type="iclippoModel.iclippo_signup" Multiplicity="1" />
+          <End Role="iclippo_corporate_card" Type="iclippoModel.iclippo_corporate_card" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="iclippo_signup">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="iclippo_corporate_card">
+              <PropertyRef Name="signup_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_iclippo_login_iclippo_signup">
+          <End Role="iclippo_signup" Type="iclippoModel.iclippo_signup" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="iclippo_login" Type="iclippoModel.iclippo_login" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="iclippo_signup">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="iclippo_login">
+              <PropertyRef Name="signup_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_iclippo_password_reset_iclippo_signup">
+          <End Role="iclippo_signup" Type="iclippoModel.iclippo_signup" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="iclippo_password_reset" Type="iclippoModel.iclippo_password_reset" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="iclippo_signup">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="iclippo_password_reset">
+              <PropertyRef Name="signup_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MembershipUser">
+          <End Role="Users" Type="iclippoModel.User" Multiplicity="1" />
+          <End Role="Memberships" Type="iclippoModel.Membership" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Memberships">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserProfile">
+          <End Role="Users" Type="iclippoModel.User" Multiplicity="1" />
+          <End Role="Profiles" Type="iclippoModel.Profile" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Profiles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_UsersOpenAuthAccounts_dbo_UsersOpenAuthData_ApplicationName_MembershipUserName">
+          <End Role="UsersOpenAuthData" Type="iclippoModel.UsersOpenAuthData" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UsersOpenAuthAccounts" Type="iclippoModel.UsersOpenAuthAccount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UsersOpenAuthData">
+              <PropertyRef Name="ApplicationName" />
+              <PropertyRef Name="MembershipUserName" />
+            </Principal>
+            <Dependent Role="UsersOpenAuthAccounts">
+              <PropertyRef Name="ApplicationName" />
+              <PropertyRef Name="MembershipUserName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UsersInRoles">
+          <End Role="Roles" Type="iclippoModel.Role" Multiplicity="*" />
+          <End Role="Users" Type="iclippoModel.User" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="iclippoModelStoreContainer" CdmEntityContainer="iclippoEntities">
+          <EntitySetMapping Name="Applications">
+            <EntityTypeMapping TypeName="iclippoModel.Application">
+              <MappingFragment StoreEntitySet="Applications">
+                <ScalarProperty Name="ApplicationName" ColumnName="ApplicationName" />
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="iclippo_account">
+            <EntityTypeMapping TypeName="iclippoModel.iclippo_account">
+              <MappingFragment StoreEntitySet="iclippo_account">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="signup_id" ColumnName="signup_id" />
+                <ScalarProperty Name="account_type" ColumnName="account_type" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="image_url" ColumnName="image_url" />
+                <ScalarProperty Name="created_timestamp" ColumnName="created_timestamp" />
+                <ScalarProperty Name="modified_timestamp" ColumnName="modified_timestamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="iclippo_account_address">
+            <EntityTypeMapping TypeName="iclippoModel.iclippo_account_address">
+              <MappingFragment StoreEntitySet="iclippo_account_address">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="signup_id" ColumnName="signup_id" />
+                <ScalarProperty Name="account_id" ColumnName="account_id" />
+                <ScalarProperty Name="address_name" ColumnName="address_name" />
+                <ScalarProperty Name="house_no" ColumnName="house_no" />
+                <ScalarProperty Name="visible_house_no" ColumnName="visible_house_no" />
+                <ScalarProperty Name="street" ColumnName="street" />
+                <ScalarProperty Name="visible_street" ColumnName="visible_street" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="visible_city" ColumnName="visible_city" />
+                <ScalarProperty Name="post_zip_code" ColumnName="post_zip_code" />
+                <ScalarProperty Name="visible_zip_code" ColumnName="visible_zip_code" />
+                <ScalarProperty Name="state_province" ColumnName="state_province" />
+                <ScalarProperty Name="visible_state_province" ColumnName="visible_state_province" />
+                <ScalarProperty Name="country" ColumnName="country" />
+                <ScalarProperty Name="visible_country" ColumnName="visible_country" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="iclippo_account_contact">
+            <EntityTypeMapping TypeName="iclippoModel.iclippo_account_contact">
+              <MappingFragment StoreEntitySet="iclippo_account_contact">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="signup_id" ColumnName="signup_id" />
+                <ScalarProperty Name="account_id" ColumnName="account_id" />
+                <ScalarProperty Name="hotline" ColumnName="hotline" />
+                <ScalarProperty Name="visible_hotline" ColumnName="visible_hotline" />
+                <ScalarProperty Name="fixed_line" ColumnName="fixed_line" />
+                <ScalarProperty Name="visible_fixed_line" ColumnName="visible_fixed_line" />
+                <ScalarProperty Name="fax" ColumnName="fax" />
+                <ScalarProperty Name="visible_fax" ColumnName="visible_fax" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="visible_email" ColumnName="visible_email" />
+                <ScalarProperty Name="web" ColumnName="web" />
+                <ScalarProperty Name="visible_web" ColumnName="visible_web" />
+                <ScalarProperty Name="messengers" ColumnName="messengers" />
+                <ScalarProperty Name="social_media" ColumnName="social_media" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="iclippo_corporate_card">
+            <EntityTypeMapping TypeName="iclippoModel.iclippo_corporate_card">
+              <MappingFragment StoreEntitySet="iclippo_corporate_card">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="signup_id" ColumnName="signup_id" />
+                <ScalarProperty Name="account_id" ColumnName="account_id" />
+                <ScalarProperty Name="card_name" ColumnName="card_name" />
+                <ScalarProperty Name="employee_name" ColumnName="employee_name" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+                <ScalarProperty Name="visible_mobile" ColumnName="visible_mobile" />
+                <ScalarProperty Name="direct_line" ColumnName="direct_line" />
+                <ScalarProperty Name="visible_direct_line" ColumnName="visible_direct_line" />
+                <ScalarProperty Name="extension" ColumnName="extension" />
+                <ScalarProperty Name="visible_extension" ColumnName="visible_extension" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="visible_email" ColumnName="visible_email" />
+                <ScalarProperty Name="messengers" ColumnName="messengers" />
+                <ScalarProperty Name="is_public" ColumnName="is_public" />
+                <ScalarProperty Name="allow_contact" ColumnName="allow_contact" />
+                <ScalarProperty Name="created_timestamp" ColumnName="created_timestamp" />
+                <ScalarProperty Name="modified_timestamp" ColumnName="modified_timestamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="iclippo_login">
+            <EntityTypeMapping TypeName="iclippoModel.iclippo_login">
+              <MappingFragment StoreEntitySet="iclippo_login">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="signup_id" ColumnName="signup_id" />
+                <ScalarProperty Name="ip" ColumnName="ip" />
+                <ScalarProperty Name="attempt" ColumnName="attempt" />
+                <ScalarProperty Name="login_timestamp" ColumnName="login_timestamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="iclippo_other_info">
+            <EntityTypeMapping TypeName="iclippoModel.iclippo_other_info">
+              <MappingFragment StoreEntitySet="iclippo_other_info">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="signup_id" ColumnName="signup_id" />
+                <ScalarProperty Name="account_id" ColumnName="account_id" />
+                <ScalarProperty Name="industry" ColumnName="industry" />
+                <ScalarProperty Name="interested_in" ColumnName="interested_in" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="iclippo_password_reset">
+            <EntityTypeMapping TypeName="iclippoModel.iclippo_password_reset">
+              <MappingFragment StoreEntitySet="iclippo_password_reset">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="signup_id" ColumnName="signup_id" />
+                <ScalarProperty Name="old_password" ColumnName="old_password" />
+                <ScalarProperty Name="request_timestamp" ColumnName="request_timestamp" />
+                <ScalarProperty Name="reset_timestamp" ColumnName="reset_timestamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="iclippo_personal_card">
+            <EntityTypeMapping TypeName="iclippoModel.iclippo_personal_card">
+              <MappingFragment StoreEntitySet="iclippo_personal_card">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="signup_id" ColumnName="signup_id" />
+                <ScalarProperty Name="account_id" ColumnName="account_id" />
+                <ScalarProperty Name="card_name" ColumnName="card_name" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+                <ScalarProperty Name="visible_mobile" ColumnName="visible_mobile" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="visible_email" ColumnName="visible_email" />
+                <ScalarProperty Name="web" ColumnName="web" />
+                <ScalarProperty Name="visible_web" ColumnName="visible_web" />
+                <ScalarProperty Name="messengers" ColumnName="messengers" />
+                <ScalarProperty Name="social_media" ColumnName="social_media" />
+                <ScalarProperty Name="is_public" ColumnName="is_public" />
+                <ScalarProperty Name="allow_contact" ColumnName="allow_contact" />
+                <ScalarProperty Name="created_timestamp" ColumnName="created_timestamp" />
+                <ScalarProperty Name="modified_timestamp" ColumnName="modified_timestamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="iclippo_signup">
+            <EntityTypeMapping TypeName="iclippoModel.iclippo_signup">
+              <MappingFragment StoreEntitySet="iclippo_signup">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="is_verified" ColumnName="is_verified" />
+                <ScalarProperty Name="signup_timestamp" ColumnName="signup_timestamp" />
+                <ScalarProperty Name="modified_timestamp" ColumnName="modified_timestamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Memberships">
+            <EntityTypeMapping TypeName="iclippoModel.Membership">
+              <MappingFragment StoreEntitySet="Memberships">
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="PasswordFormat" ColumnName="PasswordFormat" />
+                <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="PasswordQuestion" ColumnName="PasswordQuestion" />
+                <ScalarProperty Name="PasswordAnswer" ColumnName="PasswordAnswer" />
+                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+                <ScalarProperty Name="IsLockedOut" ColumnName="IsLockedOut" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+                <ScalarProperty Name="LastPasswordChangedDate" ColumnName="LastPasswordChangedDate" />
+                <ScalarProperty Name="LastLockoutDate" ColumnName="LastLockoutDate" />
+                <ScalarProperty Name="FailedPasswordAttemptCount" ColumnName="FailedPasswordAttemptCount" />
+                <ScalarProperty Name="FailedPasswordAttemptWindowStart" ColumnName="FailedPasswordAttemptWindowStart" />
+                <ScalarProperty Name="FailedPasswordAnswerAttemptCount" ColumnName="FailedPasswordAnswerAttemptCount" />
+                <ScalarProperty Name="FailedPasswordAnswerAttemptWindowsStart" ColumnName="FailedPasswordAnswerAttemptWindowsStart" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Profiles">
+            <EntityTypeMapping TypeName="iclippoModel.Profile">
+              <MappingFragment StoreEntitySet="Profiles">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="PropertyNames" ColumnName="PropertyNames" />
+                <ScalarProperty Name="PropertyValueStrings" ColumnName="PropertyValueStrings" />
+                <ScalarProperty Name="PropertyValueBinary" ColumnName="PropertyValueBinary" />
+                <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="iclippoModel.Role">
+              <MappingFragment StoreEntitySet="Roles">
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="iclippoModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="IsAnonymous" ColumnName="IsAnonymous" />
+                <ScalarProperty Name="LastActivityDate" ColumnName="LastActivityDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UsersOpenAuthAccounts">
+            <EntityTypeMapping TypeName="iclippoModel.UsersOpenAuthAccount">
+              <MappingFragment StoreEntitySet="UsersOpenAuthAccounts">
+                <ScalarProperty Name="ApplicationName" ColumnName="ApplicationName" />
+                <ScalarProperty Name="ProviderName" ColumnName="ProviderName" />
+                <ScalarProperty Name="ProviderUserId" ColumnName="ProviderUserId" />
+                <ScalarProperty Name="ProviderUserName" ColumnName="ProviderUserName" />
+                <ScalarProperty Name="MembershipUserName" ColumnName="MembershipUserName" />
+                <ScalarProperty Name="LastUsedUtc" ColumnName="LastUsedUtc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UsersOpenAuthDatas">
+            <EntityTypeMapping TypeName="iclippoModel.UsersOpenAuthData">
+              <MappingFragment StoreEntitySet="UsersOpenAuthData">
+                <ScalarProperty Name="ApplicationName" ColumnName="ApplicationName" />
+                <ScalarProperty Name="MembershipUserName" ColumnName="MembershipUserName" />
+                <ScalarProperty Name="HasLocalPassword" ColumnName="HasLocalPassword" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="UsersInRoles" TypeName="iclippoModel.UsersInRoles" StoreEntitySet="UsersInRoles">
+            <EndProperty Name="Roles">
+              <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+            </EndProperty>
+            <EndProperty Name="Users">
+              <ScalarProperty Name="UserId" ColumnName="UserId" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
