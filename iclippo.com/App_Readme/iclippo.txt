@@ -35,7 +35,7 @@
             return random.Next(min, max);
         }
 
-3. User code level error handling as follows.
+4. User code level error handling as follows.
 		try
         {
             using (StreamWriter myWriter = new StreamWriter(objRequest.GetRequestStream()))
